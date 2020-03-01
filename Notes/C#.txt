@@ -1,0 +1,37 @@
+ToUpper() will create a second temporary string object.
+The @ symbol notifies the string constructor to ignore escape characters and line breaks.
+
+This exception means that you're trying to access a collection item by index, using an invalid index. An index is invalid when it's lower than the collection's lower bound or greater than or equal to the number of elements it contains.
+Moreover please note that if you have a multidimensional array then you can't use Array.Length for both dimension, you have to use Array.GetLength()
+
+Array.Resize(ref array, array.Length + 1);
+A custom lower bound: var array = Array.CreateInstance(typeof(byte), new int[] { 4 }, new int[] { 1 });
+
+When a variable is declared as static, then a single copy of variable is created and shared among all objects at class level. Static variables are, essentially, global variables. 
+Object - This keyword is nothing more than a shortcut for System.Object, which is the root type in the C# class hierarchy
+
+compareTo() - It compares strings on the basis of Unicode value of each character in the strings.method compares the given string with current string lexicographically. It returns positive number, negative number or 0.
+System.out.println((int)'A');  - 65
+ord('a') # 97  - python
+
+Program p = new Program();
+            p.print(2, 3, 8);
+		public void print(params int[] b)
+		
+char[] num = { '1', '2', '3' };
+            Console.WriteLine(" char array: " + num); => char array: System.Char[]
+			
+public static void Main(string[] args)
+        {
+            string[] strings = { "abc", "def", "ghi" };
+            var actions = new List();
+            foreach (string str in strings)
+              actions.Add(() => { Console.WriteLine(str); });
+
+            foreach (var action in actions)
+              action();
+        }
+
+for (int i = 0; i < 4; i++) actions.Add(() => Console.WriteLine(i)); => 4,4,4,4
+
+s. The override modifier extends the base class virtual method, and the new modifier hides an accessible base class metho

@@ -1,0 +1,155 @@
+Selenium 
+Modular: The framework should be adaptable to change.
+Reusable – The commonly used methods or utilities should be kept in a common file which is easily accessible to all the scripts.
+Consistent – The test suite should be written in a consistent format by following the coding practices.
+Independent – The test scripts should be written in such a way that they are independent of each other.
+Logging – It is good to have implemented the logging feature in the framework.
+Reporting – Once the scripting is done, we can have the results and reports sent via email.
+Integration – Automation framework should be such that it is easy to integrate with other applications
+
+there are essentially two guidelines:
+
+One test case per class
+Make smart use of inheritance
+
+important modules of Test Automation Framework - 
+Test Assertion Tool
+Data Setup
+Build Management Tool
+Continuous integration tool
+Reporting tool
+Logging tool
+
+Uniformity in naming convention, commenting the functionality whenever and wherever necessary, adequate indentation, robust error handling and ability to recover easily are some good practices that you should follow while scripting.
+
+Defect Detection Ratio
+Automation Execution Time
+Reduce in the labor cost
+
+
+ different approaches to Test Automation
+ Code-Driven Testing
+ Graphical User Interface (GUI) Testing
+ Test Automation Framework
+   
+  A Selenese tells Selenium what to do. Selenium commands (Selenese) are of three types : Actions, Accessors, and Assertions.
+  
+Actions generally manipulate the state of the application like “click this link” and “select that option”. If an Action fails, or has an error, the execution of the current test is stops.
+Accessors examine the state of the application and store the results in variables, e.g. “Title”.
+Assertions verify that the state of the application is same to what we are expecting. Selenium Assertions can be of three types: “assert”, “verify”, and ” waitFor”. When an “assert” fails, the test is aborted. When a “verify” fails, the test will continue execution, logging the failure.
+A “waitFor” command waits for some condition to become true. They will fail and halt the test if the condition does not become true within the current timeout setting. Perhaps, they will succeed immediately if the condition is already true.
+
+
+A hard assert throw AssertException immediately after a test fails and the test is marked as failed. 
+
+HARD
+Assert.assertEquals(actual,expected);
+Assert.assertNotEquals(actual,expected,Message);
+Assert.assertTrue(condition);
+Assert.assertFalse(condition);
+Assert.assertNull(object);
+
+To use a soft assertion in testNg, we have to include it’s corresponding class (as SoftAssert()) in the script. This class prevents the execution to throw any exception (of assertion). Also, the most important context is, now the failed assertions will be reported in the testNg report and not making the test to abort anywhere.
+
+    	
+    	softAssert.assertNull("assertion");
+    	System.out.println("We are using Soft assertion in this method,"
+    			+ " so this line of code will also be executed even if "
+    			+ "the assetion fails.Wherever we want to execute full "
+    			+ "testcase/method, we should use SoftAssertion");
+    	softAssert.assertAll();
+		
+@Listener
+This annotation helps in logging and reporting. We have multiple listeners like:
+
+@Parameters
+This annotation helps you pass parameters to your tests directly via the testNG.xml file.
+
+@Factory()
+    @Test
+    public Object[] getTestFactoryMethod() {
+        Object[] factoryTest = new Object[2];
+        factoryTest[0] = new FactorySimplyTest1();
+        factoryTest[1] = new FactorySimpleTest2();
+        return factoryTest;
+    }
+@DataProvider
+This annotated method is used for supplying data to the test method in which the dataProvider attribute is defined.
+Name and parallel
+
+@BeforeGroups
+TestNG helps testers create a bunch of tests into groups through the attribute group used in the @Test annotation.
+
+@AfterSuite
+This annotation in TestNG runs post all the test methods of all the classes have run. 
+
+@BeforeSuite
+A suite can consist of multiple classes, this annotation runs before all the tests methods of all the classes.
+
+@AfterClass
+This annotation runs after the last test method in the current class.
+
+@BeforeClass
+This annotation runs before the first test method in the current class.
+
+@AfterMethod
+This annotation runs after every @test annotated method.
+@AfterGroups
+This annotation in TestNG runs after all the test methods of the specified group are executed.
+
+ @Test(description=”this test validates the login functionality”).
+ @Test(alwaysRun= true)
+ @Test(dataProvider=”cross browser testing”).
+ @Test(dependsOnmethod=”Login”).
+ @Test(groups=”Payment_Module”)
+ @Test(dependsOnMethods = "Payment_Module" )
+ @Test(priority=1), @Test(priority=2),
+ @Test(enabled= false).
+ @Test(timeOut= 500)
+ @Test(invocationCount = 5)
+ @Test(invocationCount =5,invocationTimeOut = 20 ).
+ @Test(expectedExceptions = {ArithmeticException.class }).
+ 
+ driver.Quit(); - ALl
+ driver.Close(); - current
+ .Displayed - This command is used to identify if a specific element is displayed on the webpage. This command returns a Boolean value; true or false depending on the visibility of web element.
+ .Enabled - This command is used to identify if a particular web element is enabled on the web page. This command returns a Boolean value; true or false as a result.
+ .Selected - This command is used to identify if a particular web element is selected. This command is used for checkboxes,radio buttons, and select operations.
+ .submit() - While the click command clicks on any button, submit command clicks on the only the buttons with type submit
+ .Tagname- This command returns the HTML tag of a web element. It returns a string value as the result.
+ .GetCSSValue - This method is used to return the color of a web element on the form of a rgba string (Red,Green,Blue, and Alpha).
+ 
+ Dropdown Commands
+ SelectByText 
+ SelectByIndex 
+ SelectByValue 
+ Options - This command is used to retrieve the list of options displayed in a dropdown.
+	IWebelement element = driver.FindElement(By.xpath("xpath of Webelement")); 
+SelectElement select = new SelectElement(element);
+List<IWebelement> options = select. Options;
+int size = options.Count;
+for(int i=0;i<options.size();i++)
+{
+String value = size.elementAt(i).Text;
+Console.writeLine(value);
+}
+ IsMultiple - This command is used to identify if a dropdown is a multi select dropdown;
+ DeSelectAll This command is used in multi select dropdowns.
+ DeSelectByIndex This command deselects an already selected value
+ DeSelectByValue DeSelectByText 
+ 
+ An object repository is a common storage location for all objects.
+ 
+  Cucumber profiles to run a set of features and step definitions. Use the following command to execute a cucumber profile.
+  
+  Jbehave is story-driven whereas the Cucumber is feature-driven
+  
+  cucumber <featurename>.feature --format html --out report.html --format pretty
+  
+  cucumber features/test.feature:10 --format html > testfeature.html We can select the target scenario from a feature file by providing its line number.
+  
+  
+ 
+ 
+ 
+ 

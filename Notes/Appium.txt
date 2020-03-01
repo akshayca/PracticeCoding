@@ -1,0 +1,205 @@
+mobile application UI Testing framework
+
+https://saucelabs.com/blog/native-vs-web-vs-hybrid-mobile-apps-testing-tools-and-techniques
+
+Test Web
+Provides cross-platform for Native and Hybrid mobile automation
+Uses Webdriver ,  JSON wire protocol : so Supports
+It does not require recompilation of App
+Support automation test on physical device as well as similar or emulator both
+It has no dependency on mobile device
+
+It receives connection and command request from the client and execute that command on mobile devices (Android / iOS)
+
+It responds back with HTTP responses. Again, to execute this request, it uses the mobile test automation frameworks to drive the user interface of the apps. Framework like
+
+Appium support any language that support HTTP
+
+APPIUM INSPECTOR - It records and plays native application behavior by inspecting DOM and generates the test scripts in any desired language.
+
+4 basic requirement for writing Appium tests
+Driver Client
+Appium Session:
+Desired Capabilities
+Driver Commands
+
+Yes, you can run the test in a multithreaded environment but you have to ensure that no more than one test runs at the same time against the same Appium server.
+
+In Android, you only need .apk file to automate using Appium
+
+
+you don't need server machine to run tests on Appium. Appium facilitates a 2-tier architecture where a test machine connects to a test server running Appium and automating the whole thing
+
+ it is possible to interact with App while using Javascript
+ 
+ The most difficult scenario to test with Appium is data exchange
+
+Appium package master is a set of tools manage and create appium packages. For example to create package you can use the code
+
+# using es7/babe1
+
+Gulp create-package –n <package-name>
+
+#regular es5
+
+Gulp create-package ---nobabe1 –n <package-name>
+
+The package will be generated in the out/<package-name>
+
+Type of mobile testing
+Usability testing
+Compatibility testing
+Interface testing
+Services testing
+Low-level resource testing
+Performance testing
+Operational testing
+Installation tests
+Security testing
+
+general structure of mobile application testing frameworks
+Application Package
+Instrumentation TestRunner
+Test Package: It includes two classes, Test case classes, and Mock objects.
+
+common bugs
+Critical,
+block,
+major,
+minor,
+
+These are the four philosophies Appium is based around-
+Test the same app you submit to the marketplace
+Write your tests in any language, using any framework
+Use a standard automation specification and API
+Build a large and thriving open-source community effort
+
+ Appium promotes a 2-tier architecture where a test machine connects to a test server running Appium and automating the whole thing.
+ 
+ When Appium is downloaded and installed, then a server is set up on a machine that exposes a REST API.
+ 
+ Major areas are
+
+Installation of the application.
+First time launching an application without having network access.
+Uninstallation of the app.
+The orientation of the app if it is supported.
+Testing application performance on different kinds of devices and network scenarios.
+Testing the application response and how it responds when an invalid user credential is provided.
+
+there are some key points were setting a breakpoint is always worth it, for example, the proxy component is worth a mention. In appium/lib/server/proxy.js you can set a breakpoint in function doProxy(req, res), that will be hit every time commands are sent to platform-specific components to be translated into automation commands.
+
+
+Selection of the “right” Automation tool
+Selection of Automation Framework if required
+List of in scope and out of scope items for automation
+Test Environment Setup
+Preparing the Gantt Chart of Project timelines for test script development & execution.
+Identify Test Deliverables
+
+We generally use logs to see the cause of the issue, where the failure is occurring. So for iOS – iPhone configuration utility & for Android Monitor.bat, etc can be used. If you provide logs from these tools to the developer, they can easily understand the cause of the issue.
+
+Phone calls & Messages
+Battery drains out while using the application under test
+Low battery scenarios
+Memory card mount/unmount scenarios
+Actual performance of your application 
+Bluetooth related testing.
+
+There are a number of Selenium commands that work with Appium tool.
+
+Locate commands using ID or class names.
+Raise events on elements e.g. Click().
+Text commands like type().
+Get/Set element properties.
+Commands to run JavaScript.
+Switch context between different web views like switching <iFrames> in Selenium Webdriver.
+Commands to manage alert boxes
+
+ Appium does not support multiple sessions, and unless you have implemented an additional layer on top of it to handle this case, multiple tests might fail.
+ 
+ ADB(Android Debug Bridge) 
+ 
+ https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2019/05/Question-34-Appium-Interview-Questions-Edureka-1.png
+ 
+ py.cleanup -p == A simple command line utility that organises files in a directory into subdirectories based on the files' extensions.
+ 
+ By default pytest only identifies the file names starting with test_ or ending with _test as the test files. 
+ 
+ test_login.py - valid
+login_test.py - valid
+testlogin.py -invalid
+logintest.py -invalid
+
+ Pytest allows us to run specific tests. We can do it in 2 ways
+
+Grouping of test names by substring matching
+Grouping of tests by markers
+
+py.test -k method1 -v
+-k <expression> is used to represent the substring to match
+-v increases the verbosity
+
+@pytest.mark.<name>
+
+Running tests in parallel == pip install pytest-xdist == py.test -n 4 (workers)
+
+Pytest fixtures
+Fixtures are used when we want to run some code before every test method. 
+
+@pytest.fixture
+
+The fixture method has a scope only within that test file it is defined.
+
+Parameterized tests
+ @pytest.mark.parametrize.
+ 
+ The purpose of parameterizing a test is to run a test against multiple sets of arguments. We can do this by @pytest.mark.parametrize.
+ import pytest
+@pytest.mark.parametrize("input1, input2, output",[(5,5,10),(3,5,12)])
+def test_add(input1, input2, output):
+	assert input1+input2 == output,"failed"
+	
+@pytest.mark.xfail. - Dont count
+@pytest.mark.skip. - skip
+
+Results XML
+We can create test results in XML format which we can feed to Continuous Integration servers for further processing and so. This can be done by
+
+py.test test_sample1.py -v --junitxml="result.xml"
+
+Pytest - Conftest.py 
+
+We can define the fixture functions in this file to make them accessible across multiple test files.
+
+https://www.guru99.com/pytest-tutorial.html
+
+The plugin provides two command line options to rerun failures from the last pytest invocation:
+
+--lf, --last-failed - to only re-run the failures.
+--ff, --failed-first - to run the failures first and then the rest of the tests.
+
+pip install pytest-cache
+
+Class :
+Class is a set or category of things having some property or attribute in common and differentiated from others by kind, type, or quality.
+
+In technical terms we can say that class is a blue print for individual objects with exact behaviour.
+
+Object :
+object is one of instances of the class. which can perform the functionalities which are defined in the class.
+
+self :
+self represents the instance of the class. By using the "self" keyword we can access the attributes and methods of the class in python.
+
+__init__ :
+"__init__" is a reseved method in python classes. It is known as a constructor in object oriented concepts. This method called when an object is created from the class and it allow the class to initialize the attributes of a class.
+
+
+self.cur_path = os.path.abspath(os.path.dirname(__file__))
+        self.config_path = os.path.join(self.cur_path, r"../ConfigFiles/config.ini")
+		
+		reading a path
+
+import pyexcel as exc
+

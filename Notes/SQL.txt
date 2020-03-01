@@ -1,0 +1,20 @@
+SQL COUNT(), AVG() and SUM() Functions
+
+The COUNT() function returns the number of rows that matches a specified criteria.
+
+The AVG() function returns the average value of a numeric column.
+
+The SUM() function returns the total sum of a numeric column.
+
+The HAVING clause was added to SQL because the WHERE keyword could not be used with aggregate functions.
+
+The GROUP BY Clause is used to group rows with same values .
+The GROUP BY Clause is used together with the SQL SELECT statement.
+The SELECT statement used in the GROUP BY clause can only be used contain column names, aggregate functions, constants and expressions.
+The HAVING clause is used to restrict the results returned by the GROUP BY clause.
+
+WHERE is used to filter rows before grouping and HAVING is used to exclude records after grouping
+
+
+
+

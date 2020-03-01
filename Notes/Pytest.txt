@@ -1,0 +1,25 @@
+Fixtures
+fixtures have explicit names and are activated by declaring their use from test functions, modules, classes or whole projects.
+fixtures are implemented in a modular manner, as each fixture name triggers a fixture function which can itself use other fixtures.
+fixture management scales from simple unit to complex functional testing, allowing to parametrize fixtures and tests according to configuration and component options, or to re-use fixtures across class, module or whole test session scopes.
+Don't forget you need to include fix_method name as a parameter in all test.
+If you want to execute fixture code only once in module, you can specify its scope. @pytest.fixture(scope="module")
+
+Assertions are checks that return either True or False status. In pytest, if an assertion fails in a test method, then that method execution is stopped there. The remaining code in that test method is not executed, and pytest will continue with the next test method.
+
+@pytest.mark.smoke You can then restrict a test run to only run tests marked with smoke or regression: pytest -v -m smoke
+
+You can use the -k command line option to specify an expression which implements a substring match on the test names instead of the exact match on markers that -m provides.
+pytest -v -k mytest1
+pytest -k "not mytest1" -v
+pytest -k "mytest1 or mytest2" -v
+
+@pytest.mark.skip(reason="this will not execute")
+Alternatively, it is also possible to skip imperatively during test execution or setup by calling the pytest.skip(reason) function
+def my_function():
+    if not valid_config():
+        pytest.skip("unsupported configuration")
+		
+@pytest.mark.skipif(sys.version_info < (3, 6), reason="requires python3.6 or higher")
+def test_function():
+
