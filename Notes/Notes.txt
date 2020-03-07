@@ -43,3 +43,146 @@ for i in range(0, t):
         p.yearPasses()       
     p.amIOld()
     print("")
+	
+3. Recursion 
+
+factorial = lambda x : 1 if x<=1 else x*factorial(x-1)
+print(factorial(int(input())))
+
+def factorial(n):
+    if n <= 1:
+        return 1
+    else:
+        return n * factorial(n-1)
+		
+Day 5: Loops
+
+ 
+
+import sys
+
+N = int(input().strip())
+
+for i in range(1,11):
+
+print("{} x {} = {}".format(N, i, (N*i)))
+
+
+Day 6: Let's Review
+
+def dx(string):    
+
+    a = ""
+
+    b = ""
+
+    for i in range(len(string)):
+
+        if i%2 == 0:
+
+            a += string[i]
+
+        else:
+
+            b += string[i]
+
+    print(str(a) + " " + str(b))
+
+ 
+
+n = int(input())
+
+for i in range(n):
+
+    string = input()
+
+    dx(string)
+
+ 
+for N in range(int(input())):
+    S = input()
+    print(S[::2], S[1::2])
+ 
+
+Day 7 : Arrays
+
+ 
+
+To read an array and print in a reverse order:
+
+n = int(input())
+
+arr = list(map(int, input().rstrip().split()))
+
+print(*arr[::-1])
+
+ 
+
+Print lists in Python – for, *arr, print(' '.join(a)) , print(' '.join(map(str, a))) , print('\n'.join(map(str, a)))
+
+ 
+
+a = [1, 2, 3, 4, 5] = print str(a)[1:-1] = 1, 2, 3, 4, 5
+ 
+
+Day
+
+Dict = {1: 'Geeks', 2: 'For', 
+
+        3:{'A' : 'Welcome', 'B' : 'To', 'C' : 'Geeks'}} 
+
+ 
+Taking multiple inputs from user in Python
+
+input().split(separator, maxsplit)
+
+ 
+
+Day 8: Dictionaries and maps
+
+
+n = int(input())
+
+name_numbers = [input().split() for _ in range(n)]
+
+phone_book = {k: v for k,v in name_numbers}
+
+while True:
+
+    try:
+
+        name = input()
+
+        if name in phone_book:
+
+            print('%s=%s' % (name, phone_book[name]))
+
+        else:
+
+            print('Not found')
+
+    except:
+
+        break
+
+ 
+
+Alternate ways
+
+For Part 1: phone_book = dict(input().split() for _ in range(n))
+
+                    for i in range(n):
+                        name, num = input().strip().split(' ')
+
+                        phoneBook[name] = num
+
+ 
+
+For Part 2: print('%s=%s' % (key, phonebook[key]) if phonebook.get(key) else 'Not found')
+
+Day 10- Binary
+
+A*Bd
+A- number 0 to B-1
+B- Base
+d - digit location 
